@@ -1,0 +1,39 @@
+<div class="header">
+    <!-- Logo on the left -->
+    <!-- <img src="assets/Logo.png" alt="Logo" class="logo" /> -->
+    <img src="assets/ColurLogo.jpg" alt="Logo" class="logo" />
+
+    <div class="title-wrapper">
+        <h1 class="slide-title">SD PACKS</h1>
+    </div>
+
+    <!-- Navigation links on the right -->
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/about">About Us</a></li>
+            <!-- Product Dropdown -->
+            <div class="dropdown">
+                <button class="dropbtn">Products ▾</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['/product']" [queryParams]="{ type: 'primary' }">Primary Packaging</a>
+                    <a [routerLink]="['/product']" [queryParams]="{ type: 'secondary' }">Secondary Packaging</a>
+                    <a [routerLink]="['/product']" [queryParams]="{ type: 'special' }">Special Packaging</a>
+                </div>
+            </div>
+            <!-- Services Dropdown -->
+            <div class="dropdown">
+                <button class="dropbtn">Services ▾</button>
+                <div class="dropdown-content">
+                    <a [routerLink]="['/services']" [queryParams]="{ type: 'Artwork' }">Artwork Development Support</a>
+                    <a [routerLink]="['/services']" [queryParams]="{ type: 'Blister' }">Blister Tools</a>
+                    <a [routerLink]="['/services']" [queryParams]="{ type: 'Serialization' }">Serialization Support</a>
+
+
+                </div>
+            </div>
+            <!-- <li><a routerLink="/mission">Mission</a></li> -->
+            <li><a routerLink="/contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>

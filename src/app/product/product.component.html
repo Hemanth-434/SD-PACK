@@ -1,0 +1,181 @@
+<!-- Product Section
+<section class="product">
+    <h2>Our Products</h2>
+
+
+    <div class="product-grid">
+
+
+        <div class="product-item">
+            <div class="product-image">
+                <img src="assets/AluminiumSeals.jpg" alt="Product 1">
+            </div>
+            <div class="product-text">
+                <h3>Aluminum seals</h3>
+                <p>Aluminum seals are used in various applications, from protecting product integrity in pharmaceuticals
+                    to securing shipping containers and meters. These seals offer a reliable way to ensure tamper-proof
+                    protection and maintain the integrity of sealed items. They are commonly found in pharmaceutical
+                    packaging,
+                    shipping containers, and meters. Key features of aluminum seals include tamper-evident closures for
+                    vials,
+                    availability in flip-off and tear-off types, custom colors and embossing options, and ensuring
+                    product
+                    integrity and safety.
+                </p>
+
+
+                <a href="https://www.youtube.com/watch?v=_SPSAg-Bdo4" class="product-link">Learn More</a>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image">
+                <img src="assets/ContainersAndCaps.jpg" alt="Product 2">
+            </div>
+            <div class="product-text">
+                <h3>Containers and Caps</h3>
+                <p>
+                    Containers and caps/closures play a vital role in pharmaceutical packaging by protecting and storing
+                    medications.
+                    Containers serve as the primary vessels for holding medications, while caps/closures ensure a secure
+                    seal to prevent contamination.
+                    These components are essential for maintaining the safety and effectiveness of drugs throughout
+                    their lifecycle, from production to patient use.
+                    Key features include HDPE, PET, and PP containers, tamper-evident and child-resistant caps, various
+                    capacities and designs available,
+                    and suitability for tablets, powders, and liquids.
+                </p>
+
+
+                <a href="https://mrpsolutions.com/markets/pharmaceutical" class="product-link">Learn More</a>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image">
+                <img src="assets/GlassVials.jpg" alt="Product 2">
+            </div>
+            <div class="product-text">
+                <h3>GlassVials</h3>
+                <p>
+                    Glass vials are essential in the pharmaceutical industry for packaging injectables and liquid
+                    medicines.
+                    They provide a safe and reliable solution for storing sensitive substances, ensuring product
+                    integrity
+                    and maintaining sterility. These vials are widely used due to their durability, chemical resistance,
+                    and ability to preserve the quality of the contents.
+
+                    Key features include:
+                    - Used for packaging injectables and liquid medicines
+                    - Available in clear and amber color
+                    - Sizes ranging from 2ml to 100ml
+                    - Compliant with USP/EP standards
+                    - Customizable as per client needs
+                </p>
+
+
+                <a href="https://www.bormiolipharma.com/en/news/packaging-farmaceutico-vetro" class="product-link">Learn
+                    More</a>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image">
+                <img src="assets/Silica.jpg" alt="Product 2">
+            </div>
+            <div class="product-text">
+                <h3>Silica Gel Canisters/Sachets</h3>
+                <p>
+                    Silica gel canisters and sachets are widely used in pharmaceutical packaging to control moisture and
+                    protect sensitive drugs from degradation. These desiccants are essential for maintaining the
+                    stability and shelf life of medications by preventing moisture-related issues such as clumping,
+                    microbial growth, and loss of potency.
+
+                    Key features include:
+                    - Moisture control packaging for drug protection
+                    - Non-toxic and pharma-grade
+                    - Available in sachet, canister, and strip forms
+                    - Custom sizes and printing available
+                </p>
+
+
+                <a href="https://en.wikipedia.org/wiki/Silica_gel" class="product-link">Learn
+                    More</a>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-image">
+                <img src="assets/LamiTubes.jpg" alt="Product 2">
+            </div>
+            <div class="product-text">
+                <h3>LamiTubes</h3>
+                <p>
+                    Lami Tubes are widely used in the pharmaceutical and cosmetic industries for packaging creams, gels,
+                    and ointments.
+                    These tubes are designed to provide excellent protection for the contents while ensuring ease of use
+                    and maintaining hygiene.
+                    Their multi-layer structure offers superior barrier properties, making them ideal for sensitive
+                    formulations.
+
+                    Key features include:
+                    - Ideal for creams, gels, and ointments​
+                    - Multi-layer structure for better protection​
+                    - Customizable size, cap, and artwork​
+                    - Sleek and hygienic product presentation​
+                </p>
+
+
+                <a href="https://www.antillapropack.com/index.php/products/category/Lami_Tubes"
+                    class="product-link">Learn
+                    More</a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="product">
+    <h2 class="reveal-header">
+        {{ selectedType === 'primary' ? 'Primary Packaging' : (selectedType === 'secondary' ? 'Secondary Packaging' :
+        'Special Packaging') }}
+    </h2>
+
+    <div *ngIf="selectedType === 'primary'">
+        <div class="product-item" *ngFor="let item of primaryProducts">
+            <div class="product-image">
+                <img [src]="item.image" alt="Primary Product" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedType === 'secondary'">
+        <div class="product-item" *ngFor="let item of secondaryProducts">
+            <div class="product-image">
+                <img [src]="item.image" alt="Secondary Product" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedType === 'special'">
+        <div class="product-item" *ngFor="let item of SpeciailPackaging">
+            <div class="product-image">
+                <img [src]="item.image" alt="Speciail Packaging" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>

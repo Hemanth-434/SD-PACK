@@ -1,0 +1,46 @@
+<div class="Service">
+    <h2 class="reveal-header">
+        {{ selectedType === 'Blister' ? 'BlisterTools Support' : (selectedType === 'Serialization' ?
+        'SerializationSupport' :
+        'ArtworkSupport') }}
+    </h2>
+
+    <div *ngIf="selectedType === 'Blister'">
+        <div class="product-item" *ngFor="let item of BlisterTools">
+            <div class="product-image">
+                <img [src]="item.image" alt="BlisterTools" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedType === 'Serialization'">
+        <div class="product-item" *ngFor="let item of SerializationSupport">
+            <div class="product-image">
+                <img [src]="item.image" alt="Serialization Support" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedType === 'Artwork'">
+        <div class="product-item" *ngFor="let item of ArtworkSupport">
+            <div class="product-image">
+                <img [src]="item.image" alt="Artwork Support" />
+            </div>
+            <div class="product-text">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <a *ngIf="item.link" [href]="item.link" target="_blank" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>

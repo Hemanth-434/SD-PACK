@@ -1,0 +1,97 @@
+<!-- <div class="home-container">
+    <section class="about-us">
+        <img src="assets/About.jpg" alt="About Us" />
+    </section>
+    <section class="about-us">
+        <img src="assets/OurProduct.jpg" alt="About Us" />
+    </section>
+</div> -->
+
+<div class="home-container">
+    <section class="about-us">
+        <div #carouselContainer class="carousel-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+
+            <div #track class="carousel-track">
+                <div *ngFor="let img of images; let i = index" class="carousel-slide">
+                    <img [src]="img" alt="carousel image" class="carousel-image" />
+                </div>
+            </div>
+
+        </div>
+        <div class="carousel-dots">
+            <span *ngFor="let img of images; let i = index" class="dot" [class.active]="i === currentIndex"
+                (click)="goToSlide(i)">
+            </span>
+        </div>
+    </section>
+
+
+
+    <section class="product-info-container">
+        <div class="info-box fade-in">
+            <i class="fas fa-users icon"></i> About Us Overview:
+            <p>
+                We specialize in providing high-quality packaging materials and technical support services. Our goal is
+                to deliver
+                customized packaging solutions for industries such as pharmaceuticals, cosmetics, food & beverage, and
+                more.
+            </p>
+        </div>
+        <div class="info-box fade-in">
+            <h3><i class="fas fa-bullseye icon"></i> Mission:</h3>
+            <p>
+                To offer innovative and reliable packaging solutions while ensuring compliance with industry standards.
+                With years of
+                expertise, we work closely with our clients to develop sustainable and efficient packaging.​
+            </p>
+        </div>
+        <div class="info-box fade-in">
+            <h3><i class="fas fa-eye icon"></i> Vision:</h3>
+            <p>
+                To be the preferred partner in packaging, offering cutting-edge solutions, superior quality, and
+                exceptional customer
+                service.​
+            </p>
+        </div>
+        <div class="info-box fade-in">
+            <h3><i class="fas fa-box icon"></i> PrRubber Stoppers:</h3>
+            <button (click)="navigateToProducts('primary')" class="fixed-btn primary-fixed">Primary Packaging</button>
+            <div class="arrow">&#8594;</div>
+            <ul>
+                <li><span class="icon">✔</span> Aluminium Seals</li>
+                <li><span class="icon">✔</span> Containers and Caps</li>
+                <li><span class="icon">✔</span> Silica Gel Canisters/Sachets</li>
+                <li><span class="icon">✔</span> Lami Tubes</li>
+            </ul>
+
+            <h3><i class="fas fa-boxes icon"></i> Secondary Packaging Materials:</h3>
+            <button (click)="navigateToProducts('secondary')" class="fixed-btn secondary-fixed">Secondary
+                Packaging</button>
+            <div class="arrow">&#8594;</div>
+            <ul>
+                <li><span class="icon">✔</span> Printed Cartons</li>
+                <li><span class="icon">✔</span> Labels</li>
+                <li><span class="icon">✔</span> Leaflets</li>
+            </ul>
+        </div>
+
+        <div class="info-box fade-in">
+            <h3><i class="fas fa-cubes icon"></i> Specialty Packaging:</h3>
+            <ul>
+                <li><span class="icon">✔</span> Blister Foils (Alu-Alu, PVC/PVDC, COC, etc.)</li>
+            </ul>
+            <h3><i class="fas fa-headset icon-colored"></i>Support Services:</h3>
+
+            <button (click)="navigateToProducts('special')" class="fixed-btn Special-fixed">Special Packaging</button>
+            <div class="arrow special-arrow">&#8594;</div>
+
+            <ul>
+                <li><span class="icon">✔</span> Tools and Blister Change Parts</li>
+                <li><span class="icon">✔</span> Serialization Support</li>
+                <li><span class="icon">✔</span> Technical Support for Packaging Material Development</li>
+                <li><span class="icon">✔</span> Artwork Development Support</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
